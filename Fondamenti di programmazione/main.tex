@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{tcolorbox}
+\usepackage{forest}
+\usepackage{dirtree} % Aggiungi il pacchetto dirtree
+
+% Definizione del nuovo ambiente 'important'
+\newtcolorbox{important}[1][]{
+  colback=yellow!10!white,
+  colframe=red!50!black,
+  title=Ricorda,
+  #1
+}
+
+\begin{document}
+
+\title{Fondamenti di Programmazione}
+\author{Riccardo Rasori}
+\date{\today}
+
+\maketitle
+
+\section{17/02/2025}
+
+\dirtree{%
+    .1 Classe .
+    .2 Metodi .
+    .2 Strutture .
+}
+
+\begin{important}
+    Per compilare un file .java, usare il comando \texttt{javac nomeFile.java}.
+    Tale comanda genera il file \texttt{nomeFile.class}.
+    Per eseguirlo, usare il comando \texttt{java nomeFile}.
+\end{important}
+
+
+
+
+\end{document}
