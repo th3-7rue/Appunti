@@ -1,8 +1,10 @@
-\documentclass{article}
+\documentclass{report}
 
+\usepackage[italian]{babel} % Imposta la lingua italiana
 \usepackage{tcolorbox}
 \usepackage{forest}
 \usepackage{dirtree} % Aggiungi il pacchetto dirtree
+\usepackage{graphicx} % Aggiungi il pacchetto graphicx
 
 % Definizione del nuovo ambiente 'important'
 \newtcolorbox{important}[1][]{
@@ -14,27 +16,33 @@
 
 \begin{document}
 
-\title{Fondamenti di Programmazione}
-\author{Riccardo Rasori}
-\date{\today}
+\begin{center}
+  \vspace*{2cm}
+  {\Huge Fondamenti di Programmazione \par}
+  \vspace{1cm}
+  \includegraphics[width=0.5\textwidth]{logounibs.png}\par
+  \vspace{1cm}
+  {\Large Riccardo Rasori \par}
+  \vspace{0.5cm}
+  {\large A.A. 2024/2025 \par}
+  \vspace{2cm}
+\end{center}
 
-\maketitle
+\tableofcontents % Aggiungi l'indice
 
+\chapter{Introduzione}
 \section{17/02/2025}
 
 \dirtree{%
-    .1 Classe .
-    .2 Metodi .
-    .2 Strutture .
+  .1 Classe .
+  .2 Metodi .
+  .2 Strutture .
 }
 
 \begin{important}
-    Per compilare un file .java, usare il comando \texttt{javac nomeFile.java}.
-    Tale comanda genera il file \texttt{nomeFile.class}.
-    Per eseguirlo, usare il comando \texttt{java nomeFile}.
+  Per compilare un file .java, usare il comando \texttt{javac nomeFile.java}.
+  Tale comanda genera il file \texttt{nomeFile.class}.
+  Per eseguirlo, usare il comando \texttt{java nomeFile}.
 \end{important}
-
-
-
 
 \end{document}
