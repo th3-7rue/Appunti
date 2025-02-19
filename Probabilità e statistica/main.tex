@@ -1,0 +1,37 @@
+\documentclass{report}
+
+\usepackage[italian]{babel} % Imposta la lingua italiana
+\usepackage{tcolorbox}
+\usepackage{forest}
+\usepackage{dirtree} % Aggiungi il pacchetto dirtree
+\usepackage{graphicx} % Aggiungi il pacchetto graphicx
+
+% Definizione del nuovo ambiente 'important'
+\newtcolorbox{important}[1][]{
+  colback=yellow!10!white,
+  colframe=red!50!black,
+  title=Ricorda,
+  #1
+}
+
+\begin{document}
+
+\begin{center}
+  \vspace*{2cm}
+  {\Huge Probabilità e statistica \par}
+  \vspace{1cm}
+  \includegraphics[width=0.5\textwidth]{logounibs.png}\par
+  \vspace{1cm}
+  {\Large Riccardo Rasori \par}
+  \vspace{0.5cm}
+  {\large A.A. 2024/2025 \par}
+  \vspace{2cm}
+\end{center}
+
+\tableofcontents % Aggiungi l'indice
+
+\chapter{Introduzione}
+\section{19/02/2025}
+
+
+\end{document}
