@@ -6,7 +6,9 @@
 \usepackage{dirtree} % Aggiungi il pacchetto dirtree
 \usepackage{graphicx} % Aggiungi il pacchetto graphicx
 \usepackage{pgfplots}
-\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{wrapfig}
+\pgfplotsset{width=5cm,compat=1.9}
+
 \renewcommand{\thefootnote}{\roman{footnote}}
 % Definizione del nuovo ambiente 'important'
 \newtcolorbox{important}[1][]{
@@ -189,7 +191,68 @@ Es: $9,83/9,3$\footnote{2 cifre, ma l'incertezza è circa dell'1\%}$=1,056989247
                       };
                   \end{axis}
                 \end{tikzpicture}
-        \end{itemize}
+          \item La velocità è quanto rapidamente si muove la particella
+                \begin{itemize}
+                  \item Velocità vettoriale media\\È il rapporto tra lo spostamento $\Delta x$ che si verifica in un certo intervallo $\Delta t$ e l'intervallo stesso\\$\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2(t_2)-x_1(t_1)}{t_2-t_1}[\frac{m}{s}]$\\$[\overline{v}]=[LT^{-1}]$\\\begin{tikzpicture}
+                          \begin{axis}[
+                              axis x line=middle,
+                              axis y line=middle,
+                              enlargelimits,
+                              xtick={1,2,3,4},
+                              xlabel={$t$},
+                              ylabel={},
+                              ytick=\empty,
+                              samples=100,
+                              grid=major
+                            ]
 
+                            % Disegna la curva interpolata
+                            \addplot[smooth, tension=0.8, thick, blue] coordinates {
+                                (1,-4) (3,0)  (4,2)
+                              };
+
+                            % Disegna i punti con cerchi vuoti
+                            \addplot[only marks, mark=o, mark size=3pt] coordinates {
+                                (1,-4) (3,0)  (4,2)
+                              };
+
+                            % Disegna la retta secante (velocità media tra due punti)
+                            \addplot[domain=0.5:4.5, thick, green] {1.5*x - 4};
+
+                          \end{axis}
+                        \end{tikzpicture}
+                        \\
+                        Può succedere che la particella si muova e che torni nello stesso punto:
+                        \begin{itemize}
+                          \item lo spostamento è 0 $\Rightarrow$ la velocità vettoriale media è 0
+                        \end{itemize}
+                  \item Velocità scalare media\\$\overline{u}=\frac{l}{\Delta t}[m/s]$\\$[\overline{u}]=[LT^{-1}]$
+                  \item Velocità istantanea\\
+                        \begin{definition}
+                          Limite della velocità vettoriale media quando $\Delta t$ tende a 0
+                        \end{definition}$v(t)=\lim_{\Delta t\to0}\frac{\Delta x}{\Delta t}=\lim_{t \to t_1}\frac{x(t)-x(t_1)}{t-t_1}=\lim_{\Delta t\to0}\frac{x(t+\Delta t)-x(t)}{\Delta t}\Rightarrow v(t)=\frac{dx(t)}{dt}\rightarrow$ è la derivata prima di x(t) rispetto al tempo t\\
+                        \includegraphics[scale=0.5]{grafico3.png}
+                \end{itemize}
+          \item Esempi di moti
+                \begin{itemize}
+                  \item Particella con velocità costante\\$x(t)=A+Bt$\\Velocità istantanea\\$v(t)=\frac{dx}{dt}=\frac{d}{dt}(A+Bt)=0+B$
+                  \item Particella accelerata uniformemente
+                \end{itemize}
+          \item Accelerazione media o istantanea
+                \begin{itemize}
+                  \item Media: rapporto tra la variazione della velocità della particella in un $\Delta t$ e l'intervallo stesso\\$\overline{a}=\frac{\Delta v}{\Delta t}=\frac{v_2(t_2)-v_1(t_1)}{t_2-t_1}$\\$[\overline{a}]=[\frac{LT^{-1}}{T}]=[LT^{-2}]\rightarrow[\frac{m}{s^2}]$
+                  \item Istantanea:\\$a(t)=\lim_{\Delta t\to0}\frac{\Delta v}{\Delta t}=\lim_{t\to t_1}\frac{v(t)-v(t_1)}{t-t_1}=\lim_{\Delta t\to0}\frac{v(t+\Delta t)-v(t)}{\Delta t}=\frac{dv(t)}{dt}=\frac{d^2xt}{dt^2}\rightarrow $ è la derivata seconda di x(t) rispetto al tempo t
+                  \item Accelerazione e velocità concordi
+                        \begin{itemize}
+                          \item Parlo di accelerazione se la velocità aumenta
+                          \item Parlo di decelerazione se la velocità diminuisce
+                        \end{itemize}
+                        \includegraphics[scale=0.5]{grafico4.png}
+                \end{itemize}
+          \item Accelerazione costante
+                \begin{itemize}
+                  \item Trovo la velocità\\a(t)=costante e poniamo per semplicità $t_0=0$\\$a=\overline{a}=\frac{\delta v}{\delta t}=\frac{v-v_0}{t-0}\Rightarrow v(t)=v_0+a*t$
+                \end{itemize}
+        \end{itemize}
 \end{itemize}
 \end{document}
