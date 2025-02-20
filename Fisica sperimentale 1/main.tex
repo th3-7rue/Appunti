@@ -13,6 +13,13 @@
   title=Ricorda,
   #1
 }
+% Definizione del nuovo ambiente 'definition'
+\newtcolorbox{definition}[1][]{
+  colback=blue!10!white,
+  colframe=blue!50!black,
+  title=Definizione,
+  #1
+}
 
 \begin{document}
 
@@ -31,7 +38,98 @@
 \tableofcontents % Aggiungi l'indice
 
 \chapter{Introduzione}
-\section{19/02/2025}
+
+\section{Il metodo scientifico}
+La natura è complessa $\rightarrow$ per capirla si fanno esperimenti\\
+Es. Tolta l'aria (nel vuoto) tutti i corpi cadono in maniera uguale
+\\
+$\rightarrow$ Gli esperimenti formulano una teoria\\
+$\rightarrow$ La fisica usa il linguaggio matematico per le teorie e le leggi\\
+\section{Grandezze fisiche}
+\begin{definition}
+  \textbf{Misurazione}: si associa un numero (misura) a una grandezza fisica. Associa anche la sua attendibilità (errore).\\
+  Deve essere non ambigua e riproducibile.
+\end{definition}
+\begin{definition}
+  \textbf{Grandezza fisica}: è definita in relazione al procedimento/strumento utilizzato per misurare.\\
+  Non tutte le grandezze sono indipendenti (velocità $\frac{m}{s}$).
+\end{definition}
+\dirtree{%
+  .1 Sistema Internazionale.
+  .2 Tempo (s).
+  .2 Lunghezza (m).
+  .2 Massa (kg).
+  .2 Quantità di materia (mol).
+  .2 Temperatura (K).
+  .2 Intensità di corrente elettrica (A).
+  .2 Intensità luminosa (cd).
+}
+\subsection{Tempo}
+Grandezza fisica misurata con l'orologio.\\
+Si usa l'orologio atomico basato sulla frequenza di una transizione iperfine all'atomo di $^{133}Cs$ (Cesio)
+\begin{definition}
+  \textbf{Secondo}: tempo che ci mette la luce emessa da $^{133}Cs$ per fare $9.192.631.770$ vibrazioni.
+\end{definition}
+\subsection{Lunghezza}
+Si usa il regolo per misurarla
+\begin{definition}
+  \textbf{Metro}: distanza percorsa dalla luce nel vuoto in $\frac{1}{299.792.458}$ di secondo.
+\end{definition}
+\subsection{Massa}
+\begin{definition}
+  \textbf{Massa}: grandezza fisica misurata con bilancia a due bracci.
+\end{definition}
+Campione di riferimento: kg $\rightarrow$ cilindro di platino-iridio per definire la massa
+\section{La notazione scientifica}
+\dirtree{%
+.1 Vantaggi.
+.2 È formalmente compatta.
+.2 È evidente l'\underline{ordine di grandezza} $\rightarrow$ {Potenza di 10 con cui è espresso il numero}.
+.2 È evidente la precisione con cui è noto il valore numerico $\rightarrow$ L'incertezza è espressa dal suo errore\\ {Es. $l=(3,5\pm0,1)m$}.
+}
+L'errore ci dice quante cifre significative usare per rappresentare una grandezza\\
+Es. $(4,5397\pm0,21)*10^{3} \leftarrow$ se già la prima cifra è incerta per l'errore, non ha senso precisare tutto quello che c'è dopo (397)
+\\
+$\rightarrow$ va scritto $(4,54\pm0,21)*10^{3}$
+\subsection{Num cifre significative}
+3m $\rightarrow$ per l'errore può essere $3\pm0,1$ m (2, 3 o 4)\\
+3,0m $\rightarrow$ per l'errore può essere $3,0\pm0,1$ m (2,9; 3,0; 3,1)\\
+0,003m $\leftarrow$ 1 cifra significativa\\
+0,0030m $\leftarrow$ 2 cifre significative\\
+
+\subsubsection{Addizione}
+\begin{center}
+
+  \begin{tabular}{r}
+    18,0      \\
+    + 0,0039  \\
+    + 0,00002 \\
+    \hline
+    18,00392  \\
+    = 18,0
+  \end{tabular}
+
+\end{center}\footnote{deve contenere un numero di cifre significative uguale a quello del numero con incertezza maggiore}
+
+\subsubsection{Moltiplicazione}
+Il risultato \underline{di norma} deve contenere tante cifre significative quante ne sono contenute nel fattore con meno cifre significative
+\begin{center}
+
+  \begin{tabular}{r}
+    Es:     \\
+    2,21    \\
+    $* 0,3$ \\
+    \hline
+    0,663   \\
+    = 0,7
+  \end{tabular}
+\end{center}
+Es. $12,4*84=1041,6=1,04*10^{3}$
+\subsubsection{Divisione}
+Vale la stessa regola della moltiplicazione\\
+Es. $14,28/0,714=20=20,0$ oppure $2,0*10^{1}$\\
+Es. $0,032/0,004=8=0,8*10^{1}$\\
+Es: $9,83/9,3$\footnote{2 cifre, ma l'incertezza è circa dell'1\%}$=1,05698924731=1,06$\footnote{Se avessi scritto 1,1 l'incertezza era circa del 10\%, quindi metto 1,06 e l'incertezza rimane circa 1\%}\\
 
 
 \end{document}
