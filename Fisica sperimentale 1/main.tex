@@ -7,6 +7,7 @@
 \usepackage{graphicx} % Aggiungi il pacchetto graphicx
 \usepackage{pgfplots}
 \usepackage{wrapfig}
+\usepackage{amsmath}
 \pgfplotsset{width=5cm,compat=1.9}
 
 \renewcommand{\thefootnote}{\roman{footnote}}
@@ -251,8 +252,39 @@ Es: $9,83/9,3$\footnote{2 cifre, ma l'incertezza è circa dell'1\%}$=1,056989247
                 \end{itemize}
           \item Accelerazione costante
                 \begin{itemize}
-                  \item Trovo la velocità\\a(t)=costante e poniamo per semplicità $t_0=0$\\$a=\overline{a}=\frac{\delta v}{\delta t}=\frac{v-v_0}{t-0}\Rightarrow v(t)=v_0+a*t$
+                  \item Trovo la velocità\\a(t)=costante e poniamo per semplicità $t_0=0$\\$a=\overline{a}=\frac{\delta v}{\delta t}=\frac{v-v_0}{t-0}\Rightarrow v(t)=v_0+a*t (1)$
+                        \begin{center}
+                          \includegraphics[scale=0.5]{grafico5.png}
+                        \end{center}
+                  \item Trovo la posizione\\
+                        \begin{equation}
+                          \begin{cases}
+                            \overline{v}=\frac{1}{2}(v_0+v)=\frac{1}{2}(v_0+v_0+a*t)=v_0+\frac{1}{2}a*t \\
+                            \overline{v}=\frac{\delta x}{\delta t}=\frac{x-x_0}{t-0}
+                          \end{cases}
+                        \end{equation}
+                        $\Rightarrow x(t)=x_0+v_0*t+\frac{1}{2}a*t^2$ (2)\\
+                        Posso conoscere dove si trova la particella a patto di sapere le condizioni iniziali di tempo e moto della particella\begin{center}
+                          \includegraphics[scale=0.5]{grafico6.png}
+                        \end{center}
                 \end{itemize}
+                Posso ricavare altre equazioni
+                \begin{itemize}
+                  \item eliminando t da (1) e (2)\\$v^2(x)=v_0^2+2a(x-x_0) (3)$
+                  \item eliminando a da (1) e (2)\\$x(t)=x_0+\frac{v_0+v}{2}t (4)$
+                  \item eliminando $v_0$ da (1) e (2)\\$x(t)=x_0+v(t)-\frac{1}{2}a(t^2) (5)$
+                \end{itemize}
+                La (1) e la (2) sono le più importanti, da sapere a memoria\\
+                Mostriamo come a questi risultati si può arrivare anche con le derivate\\
+                $a=\frac{dv}{dt}\Rightarrow dv=a*dt\Rightarrow \int_{x_0}^{x}dx=\int_{0}^{t}vdt=\int_{0}^{t}(v_0+a*t)dt \Rightarrow x-x_0=v_0*t+\frac{1}{2}a*t^2 \Rightarrow x=x_0+v_0*t+\frac{1}{2}a*t^2$\\
+                Se al posto di $t_0$ avesso un t qualunque uso $t-t_0$\\
+        \end{itemize}
+  \item Moto di caduta libera\\In assenza della resistenza dell'aria tutti i corpi cadono ugualmente
+        \begin{itemize}
+
+
+          \item $g=9,81\frac{m}{s^2}$
+          \item La direzione (detta vericale) è la stessa direzione dell'accelerazione di gravitò\\Sostituendo alle equazioni precedenti $a=-gt$ $x_0=0$ \\$v=v_0+at=-gt$\\$x=x_0+v_0t+\frac{1}{2}at=-\frac{1}{2}gt^2$
         \end{itemize}
 \end{itemize}
 \end{document}
