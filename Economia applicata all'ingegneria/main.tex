@@ -13,7 +13,13 @@
   title=Ricorda,
   #1
 }
-
+% Definizione del nuovo ambiente 'formula'
+\newtcolorbox{formula}[1][]{
+  colback=blue!5!white,
+  colframe=blue!75!black,
+  title=Formula,
+  #1
+}
 \begin{document}
 
 \begin{center}
@@ -32,6 +38,31 @@
 
 \chapter{Introduzione}
 \section{19/02/2025}
+\subsection{Analisi degli investimenti}
+\subsubsection{Introduzione alla matematica finanziara}
+\textnormal{Valori nominali $\rightarrow$ anno corrente}
+\newline
+\textnormal{Valori reali $\rightarrow$ determinato anno (regolato a indice)}
+\begin{formula}
+  $Vk_t=(VC_t/IPC_t)*100$
+\end{formula}
+\vspace{1cm}
+\dirtree{%
+  .1 Tasso di interesse $\rightarrow$ prezzo della moneta $\rightarrow$ controllato da Banca Centrale .
+  .2 Nominale .
+  .2 Reale $\rightarrow$ $i_k=(ic-\gamma)/(1+\gamma)$  \newline{Nota: $\gamma$ rappresenta il tasso di inflazione.}.
+}
+\dirtree{%
+  .1 La banca centrale controlla il prezzo della moneta .
+  .2 Immettendo denaro tramite l'acquisto di titoli di stato $\rightarrow$ riduce il tasso .
+  .2 Distruggendo denaro tramite la vendita di titoli di stato $\rightarrow$ aumenta il tasso .
+}
+\begin{formula}
+  $C \rightarrow C(1+r)$\newline
+  r $\rightarrow$ tasso di crescita \newline
+  C $\rightarrow$ capitale
+\end{formula}
+
 
 
 \end{document}
