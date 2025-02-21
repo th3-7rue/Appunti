@@ -338,7 +338,7 @@ Le componenti:
   Un \textbf{versore} è un vettore con modulo=1
 \end{definition}
 \begin{figure}[!ht]
-
+  \centering
   \resizebox{0.5\textwidth}{!}{%
     \begin{circuitikz}
       \tikzstyle{every node}=[font=\LARGE]
@@ -357,6 +357,117 @@ Le componenti:
 \end{figure}
 i, j, k sono i versori della terna cartesiana destrorsa\\
 Si indicano anche con $\hat{i}, \hat{j}, \hat{k}$\\
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.5\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\normalsize]
+      \draw [->, >=Stealth] (8,10.75) -- (13.25,10.75);
+      \draw [->, >=Stealth] (8,10.75) -- (8,15.25);
+      \draw [->, >=Stealth] (8,10.75) -- (5,8.25);
+      \draw [ color={rgb,255:red,0; green,255; blue,145}, ->, >=Stealth] (8,10.75) -- (6.5,9.5);
+      \draw [ color={rgb,255:red,0; green,255; blue,145}, ->, >=Stealth] (8,10.75) -- (9.75,10.75);
+      \draw [ color={rgb,255:red,0; green,255; blue,145}, ->, >=Stealth] (8,10.75) -- (8,12.5);
+      \node [font=\normalsize, color={rgb,255:red,0; green,255; blue,145}] at (7,10.25) {$a_x$};
+      \draw [->, >=Stealth] (8,10.75) -- (8.25,9.5);
+      \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (8,10.75) -- (8.25,11.25);
+      \draw [dashed] (6.5,9.5) -- (8.25,9.5);
+      \draw [dashed] (9.75,10.75) -- (8.25,9.5);
+      \node [font=\normalsize, color={rgb,255:red,0; green,255; blue,145}] at (9.25,11) {$a_y$};
+      \node [font=\normalsize, color={rgb,255:red,0; green,255; blue,145}] at (7.75,12) {$a_z$};
+      \draw [dashed] (8.25,9.5) -- (8.25,11.25);
+      \draw [dashed] (8,12.5) -- (8.25,11.25);
+      \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (8,11) {$a$};
+    \end{circuitikz}
+  }%
 
 
+\end{figure}\\
+$\vec{a}=a_x\hat{i}+a_y\hat{j}+a_z\hat{k}$\\
+$\vec{a}$ si può scrivere con: $\vec{a}=(a_x, a_y, a_z)$\\
+\section{Somma di vettori: metodo delle componenti}
+$\vec{r}=\vec{a}+\vec{b}$\\
+$r_x\hat{i}+r_y\hat{j}+r_z\hat{k}=(a_x\hat{i}+a_y\hat{j}+a_z\hat{k})+(b_x\hat{i}+b_y\hat{j}+b_z\hat{k})=\\=(a_x+b_x)\hat{i}+(a_y+b_y)\hat{j}+(a_z+b_z)\hat{k}$\\
+$r_x=(a_x+b_x)$\\
+$r_y=(a_y+b_y)$\\
+$r_z=(a_z+b_z)$\\
+\section{Prodotto di vettori}
+\subsection{Prodotto tra vettore e scalare}
+Scalare = c\\
+Vettore = $\vec{a}$\\
+Il prodotto dà:
+\begin{itemize}
+  \item Modulo $|a|*c$
+  \item Direzione di $\vec{a}$
+  \item Verso di $\vec{a}$ se c$>$0, opposto se c$<$0
+\end{itemize}
+\subsection{Prodotto tra vettore e vetttore}
+$\vec{a}*\vec{b}$\\
+$=|a|*|b|*\cos\theta$\\
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.3\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\large]
+
+      \draw [->, >=Stealth] (7,8.5) -- (9.5,11.25);
+      \draw [->, >=Stealth] (7,8.5) -- (10.5,8.5);
+      \draw [ color={rgb,255:red,0; green,255; blue,110} ] (7,8.5) circle (0.75cm);
+      \node [font=\large, color={rgb,255:red,27; green,255; blue,125}] at (8,9) {$\theta$};
+      \node [font=\large] at (8.5,8.25) {b};
+      \node [font=\large] at (8,10) {a};
+    \end{circuitikz}
+  }%
+
+
+\end{figure}
+$\vec{a}*\vec{b}$ si può pensare come\\
+a * proiezione di b su a\\
+$a*(cos\theta b)$ e viceversa\\
+\begin{itemize}
+  \item Quando i vettori sono perpendicolari il prodotto scalare è 0 (il coseno è 0)\\$\hat{i}*\hat{k}=\hat{k}*\hat{j}=\hat{j}*\hat{i}=0$
+  \item Quando i vettori sono paralleli il coseno è 1 e si ha $a*b=|a|*|b|$
+  \item $\vec{a}*\vec{b}=(a_x\hat{i}+a_y\hat{j}+a_z\hat{k})*(b_x\hat{i}+b_y\hat{j}+b_z\hat{k})=a_xb_x+a_yb_y+a_zb_z$
+  \item Il coseno dell'angolo tra i 2 vettori:\\$\cos\theta=\frac{\vec{a}*\vec{b}}{ab}=\frac{a_xb_x+a_yb_y+a_zb_z}{ab}$
+\end{itemize}
+\subsection{Prodotto vettoriale}
+$\vec{c}=\vec{a}\times\vec{b}$ (``a vettor b'')\\
+\begin{itemize}
+  \item Modulo $c=|\vec{a}\times\vec{b}|=ab\sin\theta$
+  \item Direzione: perpendicolare al piano individuato da $\vec{a}$ e $\vec{b}$
+  \item Verso: regola della mano destra
+        \begin{figure}[!ht]
+          \centering
+          \resizebox{0.3\textwidth}{!}{%
+            \begin{circuitikz}
+              \tikzstyle{every node}=[font=\large]
+
+              \draw [->, >=Stealth] (9.5,9) -- (9.5,11.5);
+              \draw [->, >=Stealth] (9.5,9) -- (12,9);
+              \draw [->, >=Stealth] (9.5,9) -- (8.25,7.75);
+              \node [font=\large] at (11.25,8.5) {$a$};
+              \node [font=\large] at (7.75,8.25) {$a \times b$};
+              \draw [->, >=Stealth] (7.25,8.5) -- (7.75,8.5);
+              \draw [->, >=Stealth] (8,8.5) -- (8.5,8.5);
+              \node [font=\large] at (10,11.25) {$b$};
+              \draw [->, >=Stealth] (9.75,11.5) -- (10.25,11.5);
+              \draw [->, >=Stealth] (11,8.75) -- (11.5,8.75);
+            \end{circuitikz}
+          }%
+
+
+        \end{figure}
+        \\$(\vec{a}\times\vec{b})=-(\vec{b}\times\vec{a}) \Rightarrow $ non è commutativa
+  \item Due vettori paralleli danno prodotto vettoriale = 0\\$\hat{i}\times\hat{i}=0 ...$
+  \item Mentre $\hat{i}\times\hat{j}=\hat{k} (\hat{j}\times\hat{i}=-\hat{k})$\\$\hat{j}\times\hat{k}=\hat{i} (\hat{k}\times\hat{j}=-\hat{i})$\\$\hat{k}\times\hat{i}=\hat{j} (\hat{i}\times\hat{k}=-\hat{j})$
+  \item Con le \underline{componenti cartesiane}\\
+        $\vec{a}\times\vec{b}=(a_x\hat{i}+a_y\hat{j}+a_z\hat{k})\times(b_x\hat{i}+b_y\hat{j}+b_z\hat{k})$\\$=(a_yb_z-a_zb_y)\hat{i}+(a_zb_x-a_xb_z)\hat{j}+(a_xb_y-a_yb_x)\hat{k}$\\
+          Può essere ricordato facilmente col determinante\\\\
+        $\vec{a}\times\vec{b}=\begin{vmatrix}
+          \hat{i} & \hat{j} & \hat{k} \\
+          a_x     & a_y     & a_z     \\
+          b_x     & b_y     & b_z     \\
+        \end{vmatrix}=\hat{i}(a_yb_z-a_zb_y)-\hat{j}(a_xb_z-a_zb_x)+\hat{k}(a_xb_y-a_yb_x)$
+  \item La divisione non è definita
+\end{itemize}
 \end{document}
