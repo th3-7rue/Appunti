@@ -8,6 +8,7 @@
 \usepackage{pgfplots}
 \usepackage{wrapfig}
 \usepackage{amsmath}
+\usepackage{circuitikz}
 \pgfplotsset{width=5cm,compat=1.9}
 
 \renewcommand{\thefootnote}{\roman{footnote}}
@@ -287,4 +288,75 @@ Es: $9,83/9,3$\footnote{2 cifre, ma l'incertezza è circa dell'1\%}$=1,056989247
           \item La direzione (detta vericale) è la stessa direzione dell'accelerazione di gravitò\\Sostituendo alle equazioni precedenti $a=-gt$ $x_0=0$ \\$v=v_0+at=-gt$\\$x=x_0+v_0t+\frac{1}{2}at=-\frac{1}{2}gt^2$
         \end{itemize}
 \end{itemize}
+\chapter{Vettori}
+Le grandezze fisiche sono:
+\begin{itemize}
+  \item \textbf{Scalari:} definite da un numero e un'unità di misura
+  \item \textbf{Vettoriali:} è definita da un numero, una direzione e un verso\\Il prodotto delle grandezze vettoriali è lo \underline{spostamento}
+\end{itemize}
+\section{Spostamento}
+Lo spostamento da A a B è caratterizzato dalla sua intensità, dalla direzione e dal verso e si indica con
+\begin{center}
+  \includegraphics[scale=0.3]{img1.png}
+
+\end{center}
+\begin{itemize}
+  \item Tutte le grandezze fisiche che si comportano come lo spostamento sono vettori\\Notazioni vettoriali\\\begin{tabular}{cc}
+          \textbf{Vettore} & \textbf{Modulo} \\
+          {AB}             & $\overline{AB}$ \\
+          v                & v               \\
+          $\vec{V}$        & $|\vec{V}|$
+        \end{tabular}
+\end{itemize}
+\section{Somma di vettori: Metodo grafico}
+
+$\vec{A}+\vec{B}=\vec{s}$\\
+\underline{non} è la somma dei moduli\\
+\includegraphics[scale=0.3]{img2.png}
+
+Proprietà della somma
+\begin{itemize}
+  \item Commutativa: $\vec{a}+\vec{b}=\vec{b}+\vec{a}$
+  \item Associativa: $(\vec{a}+\vec{b})+\vec{c}=\vec{a}+(\vec{b}+\vec{c})$\\\includegraphics[scale=0.3]{img3.png}
+\end{itemize}
+\section{Sottrazione}
+Il vettore $-\vec{b}$ ha la stessa intensità di $\vec{b}$, ma verso opposto\\
+La differenza è la somma di $\vec{a}$ e $-\vec{b}$\\
+$\vec{a}-\vec{b}=\vec{a}+(-\vec{b})$\\
+\section{Componenti dei vettori}
+Proietto le componenti sull'asse delle x\\
+$a_x=a\cos\theta$\\
+$a_y=a\sin\theta$\\
+\includegraphics[scale=0.3]{img4.png}
+Le componenti:
+\begin{itemize}
+  \item Sono scalari
+  \item Insieme definiscono in modo univoco il vettore\\$|a|=\sqrt{a_x^2+a_y^2}$\\$\tan\theta=\frac{a_y}{a_x}$
+\end{itemize}
+\section{Versori}
+\begin{definition}
+  Un \textbf{versore} è un vettore con modulo=1
+\end{definition}
+\begin{figure}[!ht]
+
+  \resizebox{0.5\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\LARGE]
+      \draw [->, >=Stealth] (8,10.75) -- (13.25,10.75);
+      \draw [->, >=Stealth] (8,10.75) -- (8,15.25);
+      \draw [->, >=Stealth] (8,10.75) -- (5,8.25);
+      \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (8,10.75) -- (6.5,9.5);
+      \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (8,10.75) -- (9.75,10.75);
+      \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (8,10.75) -- (8,12.5);
+      \node [font=\LARGE, color={rgb,255:red,255; green,0; blue,0}] at (8.5,11.75) {k};
+      \node [font=\LARGE, color={rgb,255:red,255; green,0; blue,0}] at (8.75,10.25) {j};
+      \node [font=\LARGE, color={rgb,255:red,255; green,0; blue,0}] at (7,10.75) {i};
+    \end{circuitikz}
+  }%
+  \label{fig:my_label}
+\end{figure}
+i, j, k sono i versori della terna cartesiana destrorsa\\
+Si indicano anche con $\hat{i}, \hat{j}, \hat{k}$\\
+
+
 \end{document}
