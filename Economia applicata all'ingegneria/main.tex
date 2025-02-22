@@ -6,6 +6,10 @@
 \usepackage{dirtree} % Aggiungi il pacchetto dirtree
 \usepackage{graphicx} % Aggiungi il pacchetto graphicx
 \usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{emoji}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -28,6 +32,13 @@
   title=Formula,
   #1
 }
+% Definizione del nuovo ambiente 'definition'
+\newtcolorbox{definition}[1][]{
+  colback=green!5!white,
+  colframe=green!75!black,
+  title=Definizione,
+  #1
+}
 \begin{document}
 
 \begin{center}
@@ -45,9 +56,8 @@
 \tableofcontents % Aggiungi l'indice
 
 \chapter{Introduzione}
-\section{19/02/2025}
-\subsection{Analisi degli investimenti}
-\subsubsection{Introduzione alla matematica finanziara}
+\section{Analisi degli investimenti}
+\subsection{Introduzione alla matematica finanziara}
 \textnormal{Valori nominali $\rightarrow$ anno corrente}
 \newline
 \textnormal{Valori reali $\rightarrow$ determinato anno (regolato a indice)}
@@ -71,8 +81,8 @@
   C $\rightarrow$ capitale
 \end{formula}
 
-\subsubsection{Costo opportunità del capitale}
-\subsubsection{Interesse e montante semplice}
+\subsection{Costo opportunità del capitale}
+\subsection{Interesse e montante semplice}
 \begin{formula}
   $I=C*r*t$
 \end{formula}
@@ -83,10 +93,61 @@
 \end{formula}
 Dimostrazione:\newline
 $M=C+I=C+Crt=C(1+rt)$
-\subsubsection{Montante semplice di rate stabili}
+\subsection{Montante semplice di rate stabili}
 \begin{formula}
   $M=R(n+\frac{rn \pm 1}{2})$\newline
   +1 se la rata è anticipata, -1 se la rata è posticipata
 \end{formula}
-\subsubsection{Interesse e montante composto}
+Es. 300€ canone mensile, 1,8\% saggio, 12 mesi\\
+$M=300(12+0,018*\frac{12+1}{2})=3636,10$\euro
+\subsection{Interesse e montante composto}
+\begin{formula}
+  $M_n=C(1+r)^n$  n = numero degli anni\\
+  $C=\frac{R}{1+r}$
+\end{formula}
+$M_1=C(1+r)$\\
+$M_2=M_1(1+r)$=$C(1+r)^2$\\
+\vspace{0.1cm}
+
+Es. Ho 1000\euro e li investo con +10\% ogni anno\\
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.4\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\large]
+      \draw [ color={rgb,255:red,40; green,32; blue,32}, short] (7.75,9.5) -- (12.75,9.5);
+      \draw [short] (7.75,9.25) -- (7.75,9.75);
+      \draw [short] (12.75,9.25) -- (12.75,9.75);
+      \draw [short] (10.25,9.25) -- (10.25,9.75);
+      \node [font=\large] at (7.75,9) {0};
+      \node [font=\large] at (10.25,9) {1};
+      \node [font=\large] at (12.75,9) {2};
+      \node [font=\large] at (13,10) {1100+10\%(1100)};
+      \node [font=\large] at (10.25,10) {1100};
+      \node [font=\large] at (7.75,10) {1000};
+    \end{circuitikz}
+  }%
+  \vspace{0.1cm}\\
+  $C=\frac{M_n}{(1+r)^n}$\\
+  \vspace{0.1cm}
+  $q=1+r$\\
+\end{figure}
+\subsection{Valore futuro (VF)}
+\begin{definition}
+  È l'ammontare di una somma di denaro complessiva degli interessi in un determinato periodo.
+\end{definition}
+\subsection{Composizione degli interessi}
+1000\euro, 2 anni, 10\%\\
+$M_2=1000(1+0,1)^2=1210$\euro\\
+\textbf{Interesse composto}
+\subsection{Valore attuale (VA)}
+Quanto devo investire oggi per avere 2000\euro \space tra un anno con saggio 11\%?\\
+$VA=\frac{2000}{1+0,11}=1801,80$\euro
+\begin{formula}
+  $VA=\frac{FV}{(1+r)^n}$
+\end{formula}
+Desidero avere a disposizione 10000\euro\space per un viaggio negli States tra 4 anni dopo che mi laureo tutto pelato \emoji{neutral-face}\\
+Quale somma dovrò accantonare ogni mese al saggio del 3\%?\\
+Quale somma dovrò depositare sul conto corrente bancario oggi?\\
+$\frac{10000\texteuro}{(1,03)^4}=8884,87$\texteuro
 \end{document}
