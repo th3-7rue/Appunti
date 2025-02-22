@@ -26,7 +26,13 @@
   title=Definizione,
   #1
 }
-
+% Definizione del nuovo ambiente 'property'
+\newtcolorbox{property}[1][]{
+  colback=green!10!white,
+  colframe=green!50!black,
+  title=Proprietà,
+  #1
+}
 \begin{document}
 
 \begin{center}
@@ -470,4 +476,132 @@ $\vec{c}=\vec{a}\times\vec{b}$ (``a vettor b'')\\
         \end{vmatrix}=\hat{i}(a_yb_z-a_zb_y)-\hat{j}(a_xb_z-a_zb_x)+\hat{k}(a_xb_y-a_yb_x)$
   \item La divisione non è definita
 \end{itemize}
+Esercizi
+\begin{enumerate}
+  \item Mostrare che $\vec{A}$ è perpendicolare a $\vec{B}$ se $|\vec{A}+\vec{B}|=|\vec{A}-\vec{B}|$\\
+        Somma $\vec{S}=(A_x+B_x)\hat{i}+(A_y+B_y)\hat{j}+(A_z+B_z)\hat{k}$\\
+        Differenza $\vec{D}=(A_x-B_x)\hat{i}+(A_y-B_y)\hat{j}+(A_z-B_z)\hat{k}$\\
+        $(A_x+B_x)^2+(A_y+B_y)^2+(A_z+B_z)^2=(A_x-B_x)^2+(A_y-B_y)^2+(A_z-B_z)^2$\\
+        Svolgo i quadrati e ottengo\\
+        $(A_x+B_x)+(A_y+B_y)+(A_z+B_z)=0$\\
+        $\Rightarrow \vec{A}* \vec{B}=0$ quindi i vettori sono perpendicolari
+  \item Calcolare l'angolo compreso tra $a=2\hat{i}-2\hat{j}+5\hat{k}$ e $b=2\hat{i}+\hat{j}-4\hat{k}$
+
+        \begin{figure}[!ht]
+          \centering
+          \resizebox{0.3\textwidth}{!}{%
+            \begin{circuitikz}
+              \tikzstyle{every node}=[font=\large]
+              \draw [->, >=Stealth] (9.5,9) -- (9.5,11.5);
+              \draw [->, >=Stealth] (9.5,9) -- (12,9);
+              \draw [->, >=Stealth] (9.5,9) -- (8.25,7.75);
+              \node [font=\large, color={rgb,255:red,0; green,255; blue,17}] at (9,9.75) {$a$};
+              \node [font=\large, color={rgb,255:red,255; green,0; blue,0}] at (9.75,8.5) {$b$};
+              \draw [ color={rgb,255:red,0; green,255; blue,17}, ->, >=Stealth] (9.5,9) -- (8.25,9.75);
+              \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (9.5,9) -- (9.25,8);
+            \end{circuitikz}
+          }%
+
+        \end{figure}
+
+        Dalla definizione $\vec{a}*\vec{b}=|a|*|b|*\cos\theta$\\
+        Ma vale anche $\vec{a}*\vec{b}=a_xb_x+a_yb_y+a_zb_z$\\
+        $\cos\theta=\frac{a_xb_x+a_yb_y+a_zb_z}{a*b}$\\
+        $a=\sqrt{2^2+(-2)^2+5^2}=\sqrt{4+4+25}=\sqrt{33}$\\
+        $b=\sqrt{2^2+1^2+3^2}=\sqrt{4+1+9}=\sqrt{14}$\\
+        $\cos\theta=\frac{2*2+(-2)*1+5*(-4)}{\sqrt{33}*\sqrt{14}}=-0,605 \Rightarrow \theta=127,12^{\circ}$
+  \item Prodotto vettoriale tra $\vec{a}=3\hat{i}+7\hat{j}$ e $\vec{b}=2\hat{i}-5\hat{j}$\\
+        $\vec{a}\times\vec{b}=\begin{vmatrix}
+            \hat{i} & \hat{j} & \hat{k} \\
+            3       & 7       & 0       \\
+            2       & -5      & 0
+          \end{vmatrix}=-29\hat{k}$
+\end{enumerate}
+\section{Moto in due e tre dimensioni}
+Cinematico in più dimensioni\\
+\textbf{Vettore posizione}\\
+Ha la coda nell'origine e la punta dove c'è la particella\\
+$\vec{r}=x\hat{i}+y\hat{j}+z\hat{k}$\\
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.2\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\large]
+      \draw [short] (10.5,12.75) -- (10.5,9.75);
+      \draw [short] (8.25,11.25) -- (12,11.25);
+      \draw [short] (12,12.75) -- (9,9.75);
+      \draw  (8.75,10.75) circle (0cm);
+      \node at (9,10.75) [circ] {};
+      \node [font=\large] at (8.5,10.5) {$P$};
+      \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (10.5,11.25) -- (9,10.75);
+    \end{circuitikz}
+  }%
+
+\end{figure}
+\vspace{0.1cm}
+
+\textbf{Spostamento}\\
+$\Delta\vec{r}=\vec{r_2}-\vec{r_1}$\\
+$\Delta r$ è il vettore che va da $r_1$ a $r_2$\\
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.2\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\large]
+      \draw [->, >=Stealth] (9.75,9) -- (9.75,11.25);
+      \draw [->, >=Stealth] (9.75,9) -- (12,9);
+      \draw [->, >=Stealth] (9.75,9) -- (8.25,7.75);
+      \node at (8.25,9) [circ] {};
+      \node at (10.5,8) [circ] {};
+      \draw [short] (8.25,9) -- (10.5,8);
+      \draw [short] (8.25,9) -- (9.75,9);
+      \draw [short] (10.5,8) -- (9.75,9);
+      \node [font=\large] at (8.25,9.5) {$r_1$};
+      \node [font=\large] at (11,8) {$r_2$};
+      \node [font=\large] at (9.25,8) {$\Delta r$};
+    \end{circuitikz}
+  }%
+
+\end{figure}
+\vspace{0.1cm}
+\begin{property}
+  Si scrive $\Delta r=(x_2\hat{i}*y_2\hat{j}*z_2\hat{k})-(x_1\hat{i}*y_1\hat{j}*z_1\hat{k})=\Delta x\hat{i}+\Delta y\hat{j}+\Delta z\hat{k}$
+\end{property}
+\subsection{Velocità vettoriale media e istantanea}
+\textbf{Media}\\
+Rapporto tra lo spostamento $\Delta r$ nel l'intervallo di tempo $\Delta t$ e l'intervallo stesso\\
+$\overline{\vec{v}}=\frac{\Delta \vec{r}}{\Delta t}=\frac{\vec{r_2}-\vec{r_1}}{t_2-t_1}$
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.2\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\large]
+      \draw [->, >=Stealth] (8.25,8) -- (8.25,11.5);
+      \draw [->, >=Stealth] (7.75,8.5) -- (11.5,8.5);
+      \node at (9,10.25) [circ] {};
+      \node at (10.5,9.5) [circ] {};
+      \draw [short] (9,10.25) -- (10.5,9.5);
+      \draw [->, >=Stealth] (8.25,8.5) -- (9,10.25);
+      \draw [->, >=Stealth] (8.25,8.5) -- (10.5,9.5);
+      \node [font=\large] at (8.5,9.75) {$r_1$};
+      \node [font=\large] at (9.75,9) {$r_2$};
+      \node [font=\large] at (9,10.75) {$1$};
+      \node [font=\large] at (11,9.5) {$2$};
+      \node [font=\large, color={rgb,255:red,255; green,0; blue,0}] at (9.75,11) {$\rightarrow$};
+      \draw [ color={rgb,255:red,255; green,0; blue,0}, short] (9,10.25) -- (11,10.75);
+      \node [font=\large] at (10,10) {$\Delta r$};
+      \node [font=\large, color={rgb,255:red,255; green,0; blue,0}] at (9.75,10.75) {$v$};
+    \end{circuitikz}
+  }%
+
+\end{figure}
+\vspace{0.1cm}\\
+\textbf{Istantanea}\\
+$\vec{v}=\lim_{\Delta t\to0}\frac{\Delta \vec{r}}{\Delta t}=\frac{dr(t)}{dt}$\\
+$\vec{v}=\frac{d\vec{r}}{dt}=\frac{dx\hat{i}+dy\hat{j}+dz\hat{k}}{dt}=\frac{dx}{dt}\hat{i}+\frac{dy}{dt}\hat{j}+\frac{dz}{dt}\hat{k}$\\
+\subsection{Accelerazione media e istantanea}
+\textbf{Media}\\
+$\overline{\vec{a}}=\frac{\Delta \vec{v}}{\Delta t}=\frac{\vec{v_2}-\vec{v_1}}{t_2-t_1}$\\\\
+\textbf{Istantanea}\\
+$\vec{a}=\lim_{\Delta t\to0}\frac{\Delta \vec{v}}{\Delta t}=\frac{d\vec{v}}{dt}=\frac{d^2r}{d^2t}$\\
 \end{document}
