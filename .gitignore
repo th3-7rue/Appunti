@@ -4,4 +4,4 @@
 **/*.log
 **/*.synctex.gz
 **/*.toc
-
+**/*.out
