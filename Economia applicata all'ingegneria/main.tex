@@ -10,6 +10,7 @@
 \usepackage{circuitikz}
 \usepackage{amsmath}
 \usepackage{emoji}
+\usepackage{numprint}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -49,7 +50,7 @@
   \vspace{1cm}
   {\Large Riccardo Rasori \par}
   \vspace{0.5cm}
-  {\large A.A. 2024/2025 \par}
+  {\large A.A. \numprint{2024}/\numprint{2025} \par}
   \vspace{2cm}
 \end{center}
 
@@ -99,7 +100,7 @@ $M=C+I=C+Crt=C(1+rt)$
   +1 se la rata è anticipata, -1 se la rata è posticipata
 \end{formula}
 Es. 300€ canone mensile, 1,8\% saggio, 12 mesi\\
-$M=300(12+0,018*\frac{12+1}{2})=3636,10$\euro
+$M=300(12+0,018*\frac{12+1}{2})=\numprint{3636,10}$\texteuro
 \subsection{Interesse e montante composto}
 \begin{formula}
   $M_n=C(1+r)^n$  n = numero degli anni\\
@@ -109,7 +110,7 @@ $M_1=C(1+r)$\\
 $M_2=M_1(1+r)$=$C(1+r)^2$\\
 \vspace{0.1cm}
 
-Es. Ho 1000\euro e li investo con +10\% ogni anno\\
+Es. Ho \numprint{1000}\texteuro e li investo con +10\% ogni anno\\
 \begin{figure}[!ht]
   \centering
   \resizebox{0.4\textwidth}{!}{%
@@ -122,9 +123,9 @@ Es. Ho 1000\euro e li investo con +10\% ogni anno\\
       \node [font=\large] at (7.75,9) {0};
       \node [font=\large] at (10.25,9) {1};
       \node [font=\large] at (12.75,9) {2};
-      \node [font=\large] at (13,10) {1100+10\%(1100)};
-      \node [font=\large] at (10.25,10) {1100};
-      \node [font=\large] at (7.75,10) {1000};
+      \node [font=\large] at (13,10) {\numprint{1100}+10\%(\numprint{1100})};
+      \node [font=\large] at (10.25,10) {\numprint{1100}};
+      \node [font=\large] at (7.75,10) {\numprint{1000}};
     \end{circuitikz}
   }%
   \vspace{0.1cm}\\
@@ -137,17 +138,65 @@ Es. Ho 1000\euro e li investo con +10\% ogni anno\\
   È l'ammontare di una somma di denaro complessiva degli interessi in un determinato periodo.
 \end{definition}
 \subsection{Composizione degli interessi}
-1000\euro, 2 anni, 10\%\\
-$M_2=1000(1+0,1)^2=1210$\euro\\
+\numprint{1000}\texteuro, 2 anni, 10\%\\
+$M_2=\numprint{1000}(1+0,1)^2=\numprint{1210}$\texteuro\\
 \textbf{Interesse composto}
 \subsection{Valore attuale (VA)}
-Quanto devo investire oggi per avere 2000\euro \space tra un anno con saggio 11\%?\\
-$VA=\frac{2000}{1+0,11}=1801,80$\euro
+Quanto devo investire oggi per avere \numprint{2000}\texteuro \space tra un anno con saggio 11\%?\\
+$VA=\frac{\numprint{2000}}{1+0,11}=\numprint{1801,80}$\texteuro
 \begin{formula}
   $VA=\frac{FV}{(1+r)^n}$
 \end{formula}
-Desidero avere a disposizione 10000\euro\space per un viaggio negli States tra 4 anni dopo che mi laureo tutto pelato \emoji{neutral-face}\\
+Desidero avere a disposizione \numprint{10000}\texteuro\space per un viaggio negli States tra 4 anni dopo che mi laureo tutto pelato \emoji{neutral-face}\\
 Quale somma dovrò accantonare ogni mese al saggio del 3\%?\\
 Quale somma dovrò depositare sul conto corrente bancario oggi?\\
-$\frac{10000\texteuro}{(1,03)^4}=8884,87$\texteuro
+$\frac{\numprint{10000}\texteuro}{(1,03)^4}=\numprint{8884,87}$\texteuro
+\subsection{Flussi di cassa multipli}
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.3\textwidth}{!}{%
+    \begin{circuitikz}
+      \tikzstyle{every node}=[font=\large]
+      \draw [ color={rgb,255:red,40; green,32; blue,32}, short] (7.75,9.5) -- (12.75,9.5);
+      \draw [short] (7.75,9.25) -- (7.75,9.75);
+      \draw [short] (12.75,9.25) -- (12.75,9.75);
+      \draw [short] (10.25,9.25) -- (10.25,9.75);
+      \node [font=\large] at (7.75,9) {0};
+      \node [font=\large] at (8.5,9) {1};
+      \node [font=\large] at (9.5,9) {2};
+      \node [font=\large] at (12.75,10) {\numprint{3600}};
+      \node [font=\large] at (11,10) {900};
+      \node [font=\large] at (8.5,10) {\numprint{2500}};
+      \draw [short] (8.5,9.25) -- (8.5,9.75);
+      \draw [short] (9.5,9.25) -- (9.5,9.75);
+      \draw [short] (11,9.25) -- (11,9.75);
+      \draw [short] (12,9.25) -- (12,9.75);
+      \node [font=\large] at (10.25,9) {3};
+      \node [font=\large] at (11,9) {4};
+      \node [font=\large] at (12,9) {5};
+      \node [font=\large] at (12.75,9) {6};
+    \end{circuitikz}
+  }%
+
+\end{figure}
+9\%\\
+$VA=\frac{\numprint{2500}}{(1+0,09)^1}+\frac{900}{(1+0,09)^4}+\frac{\numprint{3600}}{(1+0,09)^6}=\numprint{5077,70}$\texteuro
+\subsection{Annualità}
+Sono valori che si ripetono a intervalli regolari di anno in anno\\
+\begin{formula}
+  $VF(A_n)=a*\frac{(a+r)^n-1}{r}$ \hspace{1cm}  $A_n$ = accumulazione finale\\
+  \vspace{0.1cm}
+  $a=VF(A_n)*\frac{r}{(1+r)^n-1}$ \hspace{1cm} a = ricerca dell'annualità media
+
+\end{formula}
+Es. $a=\numprint{10000}\texteuro*\frac{0,03}{(1+0,03)^4-1}=\numprint{2390,27}$\texteuro
+\\
+\vspace{0.2cm}
+Rata mensile $=\frac{\numprint{2390,27}}{12+0,03*\frac{12+1}{2}}=192,25$\texteuro\\
+\begin{tabular}{ll}
+  $VA=\frac{VF}{(1+r)^n}=a*\frac{(1+r)^n-1}{r(1+r)^n}$ & VA = \numprint{800000}\texteuro                                                                        \\
+                                                       & n = 20 anni                                                                                            \\
+                                                       & r = 3\%                                                                                                \\
+  $a=VA*\frac{r}{(1+r)^n-1}$                           & Rata = $\numprint{800000}\texteuro*\frac{(1+0,03)^{20}}{(1+0,03)^{20}-1}=\numprint{53772,56}\texteuro$ \\
+\end{tabular}
 \end{document}
