@@ -56,8 +56,7 @@
 
 \tableofcontents % Aggiungi l'indice
 
-\chapter{Introduzione}
-\section{Analisi degli investimenti}
+\section{Analisi degli investimenti 1}
 \subsection{Introduzione alla matematica finanziara}
 \textnormal{Valori nominali $\rightarrow$ anno corrente}
 \newline
@@ -199,4 +198,63 @@ Rata mensile $=\frac{\numprint{2390,27}}{12+0,03*\frac{12+1}{2}}=192,25$\texteur
                                                        & r = 3\%                                                                                                \\
   $a=VA*\frac{r}{(1+r)^n-1}$                           & Rata = $\numprint{800000}\texteuro*\frac{(1+0,03)^{20}}{(1+0,03)^{20}-1}=\numprint{53772,56}\texteuro$ \\
 \end{tabular}
+\subsubsection{Annualità costanti posticipate limitate}
+\subsection{Quota di ammortamento dei capitali - Rata mutuo}
+\begin{formula}
+  $Q_{am}=A_0*\frac{r(1+r)^n}{(1+r)^n-1}$
+\end{formula}
+\subsubsection{Piano di ammortamento}
+Il debito può essere estinto in qualsiasi momento (debito residuo)
+\\
+Es. \numprint{100000}\texteuro, 7\%, 5 rate \\
+$\numprint{24389,07}\texteuro*5=\numprint{121945,35}\texteuro$\\
+\subsection{TAEN e TAN}
+\subsubsection{TAEN}
+Tasso Annuo Effettivo Globale, costo del prestito al netto di tasse e imposte
+\subsubsection{TAN}
+Tasso Annuo Nominale, non tiene conto delle spese
+\subsection{Euribor}
+Tasso Euribor: tasso interbancario di riferimento fornito da EMMI, ottenuto dalla media dei tassi di interesse applicati dalle banche europee. Incide sugli interessi a tasso variabile (composti da Euribor + spread)
+\subsection{Annualità costanti posticipate illimitate - Perpetuity}
+Annuity con flussi di cassa che continuano all'infinito, usato per esempio per la valutazione di un bene immobile.
+\begin{formula}
+  $VA(A_0)=\frac{a}{r}$\\
+  $a=VA(A_0)*r$
+\end{formula}
+\section{Analisi degli investimenti 2}
+\subsection{Investimento}
+\begin{definition}
+  Dare ai proprio risparmi una nuova veste investendoli in titoli o altri strumenti finanziari - Banca d'Italia
+\end{definition}
+\subsection{Progetti e beni di investimento}
+Beni intermedi
+\subsection{Input e Output}
+\subsection{Effetti sugli investimenti}
+\begin{itemize}
+  \item Sui costi
+  \item Sui ricavi
+  \item Sul capitale circolante
+  \item Congiunti (mix)
+\end{itemize}
+\subsection{Valutazione degli investimenti}
+Es. progetto di sviluppo di un nuovo software
+\subsection{Profili di analisi per le decisioni di investimento}
+\begin{itemize}
+  \item Profilo economico
+  \item Profilo finanziario
+\end{itemize}
+\subsection{Criteri per la determinazione degli investimenti}
+\begin{itemize}
+  \item Dimensione dei flussi monetari\\$\Delta$ positivo tra flusso di ritorno e investimento
+  \item Distribuzione temporale dei flussi\\\includegraphics[scale=0.4]{img1.png}
+  \item Valore finanziario del tempo
+\end{itemize}
+\subsection{Metodologia del Valore Attuale Netto (VAN o NPV)}
+Flussi di cassa a tempo $t_0$ con tasso di sconto adeguato
+\begin{formula}
+  NPV\footnote{Net Present Value}$=\sum_{t=0}^{n}\frac{C_t}{(1+r)^t}-I_0$
+\end{formula}
+\begin{important}
+  Se NPV$<=0$ il progetto non è conveniente
+\end{important}
 \end{document}
